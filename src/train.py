@@ -60,4 +60,11 @@ def run_training_pipeline(train_path: str):
 
 
 if __name__ == "__main__":
-    print("Training pipeline module")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run anomaly detection training pipeline")
+    parser.add_argument("--train_path", type=str, required=True, help="Path to training dataset")
+
+    args = parser.parse_args()
+
+    run_training_pipeline(args.train_path)
